@@ -1,9 +1,9 @@
 resource "null_resource" "install_node" {
   provisioner "local-exec" {
-    command = "curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -"
+    command = "curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -"
   }
   provisioner "local-exec" {
-    command = "sudo yum -y install nodejs"
+    command = "sudo apt-get install -y nodejs"
   }
   provisioner "local-exec" {
     command = "npm version"
